@@ -13,7 +13,6 @@ export default function Page() {
   const posts = usePosts({
     first: 6,
     where: {
-      categoryName: 'uncategorized',
     },
   });
 

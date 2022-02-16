@@ -1,3 +1,4 @@
+import { CategoryIdType } from '@faustjs/core/client';
 import { getNextStaticProps, is404 } from '@faustjs/next';
 import { client, Post } from 'client';
 import { Footer, Header, Hero } from 'components';
@@ -11,6 +12,7 @@ export interface PostProps {
 export function PostComponent({ post }: PostProps) {
   const { useQuery } = client;
   const generalSettings = useQuery().generalSettings;
+  const categories = post?.categories()?.nodes;
 
   return (
     <>
@@ -31,6 +33,11 @@ export function PostComponent({ post }: PostProps) {
       />
 
       <main className="content content-single">
+        {
+          categories.map(category =>{
+            return (<div key={category.id}>{category.name}</div>)
+          })
+        }
         <div className="wrap">
           <div dangerouslySetInnerHTML={{ __html: post?.content() ?? '' }} />
         </div>

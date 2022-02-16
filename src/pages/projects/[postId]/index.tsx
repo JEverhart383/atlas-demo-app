@@ -46,13 +46,13 @@ return (
   );
 }
 
-// export async function getStaticProps(context: GetStaticPropsContext) {
-//   return getNextStaticProps(context, {
-//     Page,
-//     client,
-//     notFound: await is404(context, { client }),
-//   });
-// }
+export async function getStaticProps(context: GetStaticPropsContext) {
+  return getNextStaticProps(context, {
+    Page,
+    client,
+    notFound: await is404(context, { client }),
+  });
+}
 
 // export function getStaticPaths() {
 //   return {
