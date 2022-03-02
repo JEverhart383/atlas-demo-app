@@ -1,9 +1,11 @@
 import Head from 'next/head';
+import { getNextStaticProps } from '@faustjs/next';
+import { GetStaticPropsContext } from 'next';
 import { Header, Footer } from '../../components';
 import { client } from '../../client';
 import Project from '../../components/Project';
 
-export default function Team() {
+export default function Page() {
   const { generalSettings } = client.useQuery();
 
   const projects = client.useQuery().projects()?.nodes;
@@ -31,4 +33,11 @@ export default function Team() {
       <Footer copyrightHolder={generalSettings.title} />
     </>
   );
+}
+
+export async function getStaticProps(context: GetStaticPropsContext) {
+  return getNextStaticProps(context, {
+    Page,
+    client,
+  });
 }
