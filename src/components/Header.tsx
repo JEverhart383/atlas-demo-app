@@ -38,7 +38,7 @@ function Header({
               </li>
             ))}
             <li>
-              <Link href="/login?redirect_uri=http://localhost:3000/gated">
+              <Link href="/login?redirect_uri=/gated">
                 <a
                   className="button"
                   href="/login">
