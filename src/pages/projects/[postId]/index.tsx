@@ -12,6 +12,7 @@ export default function Page() {
   const generalSettings = useQuery().generalSettings;
   const router = useRouter();
   let { postId } = router.query;
+  console.log( postId )
   if(Array.isArray(postId)){
    postId = postId[0]; 
   }
@@ -47,6 +48,7 @@ return (
 }
 
 export async function getStaticProps(context: GetStaticPropsContext) {
+  console.log(context)
   return getNextStaticProps(context, {
     Page,
     client,

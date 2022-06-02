@@ -38,11 +38,18 @@ function Header({
               </li>
             ))}
             <li>
-              <Link href="https://github.com/wpengine/faustjs">
+              <Link href="/login?redirect_uri=http://localhost:3000/gated">
                 <a
                   className="button"
-                  href="https://github.com/wpengine/faustjs">
-                  GitHub
+                  href="/login">
+                  Login
+                </a>
+              </Link>
+              <Link href="/logout">
+                <a
+                  className="button"
+                  href="/logout">
+                  Logout
                 </a>
               </Link>
             </li>
