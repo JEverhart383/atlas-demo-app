@@ -23,6 +23,11 @@ function Posts({
   postTitleLevel = 'h2',
   readMoreText = 'Read more',
 }: Props): JSX.Element {
+  // posts.map(post => {
+  //   const categories = post.categories()?.nodes.map(node => {
+  //     return node.name()
+  //   })
+  // })
   return (
     // eslint-disable-next-line react/jsx-props-no-spreading
     <section className={styles['posts-block']} {...(id && { id })}>
@@ -45,6 +50,7 @@ function Posts({
                     <a>{post.title()}</a>
                   </Link>
                 </Heading>
+                <p>{post.categories().nodes.map(node => node.name).join(', ')}</p>
                 <div
                   className={styles.excerpt}
                   // eslint-disable-next-line react/no-danger

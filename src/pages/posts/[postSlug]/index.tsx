@@ -13,6 +13,8 @@ export function PostComponent({ post }: PostProps) {
   const { useQuery } = client;
   const generalSettings = useQuery().generalSettings;
   const categories = post?.categories()?.nodes;
+  const meta = post?.meta()?.nodes
+  console.log(meta)
 
   return (
     <>

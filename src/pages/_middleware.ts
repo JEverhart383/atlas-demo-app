@@ -2,10 +2,7 @@ import { handleSitemapRequests } from '@faustjs/next';
 import { NextRequest, NextResponse } from 'next/server';
 
 export default async function _middleware(req: NextRequest) {
-  console.log(req)
-  const url = new URL(req.url)
-  console.log(url)
-  console.log(req.headers.get('host'))
+
   const sitemapRequest = await handleSitemapRequests(req, {
     wpUrl: process.env.NEXT_PUBLIC_WORDPRESS_URL,
     sitemapIndexPath: `/wp-sitemap.xml`,
