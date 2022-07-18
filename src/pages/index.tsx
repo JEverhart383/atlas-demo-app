@@ -31,7 +31,7 @@ export default function Page() {
 
       <main className="content">
         <Hero
-          title="Jeff's Test Deployment"
+          title="Jeff's Test Deployment Testing"
           buttonText="Developer Docs"
           buttonURL="https://faustjs.org"
           button2Text="Headless on GitHub"
